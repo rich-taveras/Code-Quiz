@@ -1,44 +1,57 @@
-var questions = [
-    {
-        question: "Question 1", 
-        answers: [
-            { text: "answer 1", correct: false},
-            { text: "answer 1", correct: true},
-            { text: "answer 1", correct: false},
-            { text: "answer 1", correct: false},
-        ]    },
-        {
-            question: "Question 2", 
-            answers: [
-                { text: "answer 2", correct: false},
-                { text: "answer 2", correct: true},
-                { text: "answer 2", correct: false},
-                { text: "answer 2", correct: false},
-            ]    },
+const questions = [
+  {
+    question: "Question 1",
+    answers: [
+      { text: "answer 1", correct: false },
+      { text: "answer 2", correct: true },
+      { text: "answer 3", correct: false },
+      { text: "answer 4", correct: false },
+    ],
+  },
+  {
+    question: "Question 2",
+    answers: [
+      { text: "answer 1", correct: false },
+      { text: "answer 2", correct: true },
+      { text: "answer 3", correct: false },
+      { text: "answer 4", correct: false },
+    ],
+  },
 ];
-var questionElement = document.getElementById("question");
-var answerButton = document.getElementById("answer-buttons");
-var nextButton = document.getElementById("next-btn");
+const questionElement = document.getElementById("question");
+const answerButton = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
 
-var currentQuestionIndex = 0 ;
-var score = 0;
+let currentQuestionIndex = 0;
+let score = 0;
 
-function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "next";
-    showQuestion();
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Next";
+  showQuestion();
 }
 
-function showQuestion(){
-    var currentQuestionIndex = question[currentQuestionIndex];
-    var questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-    
-    currentQuestion.answers.forEach(answer => {
-        var button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButton.appendChild(button);
-    });
+function showQuestion() {
+    resetState();
+  let currentQuestionIndex = question[currentQuestionIndex];
+  let questionNo = currentQuestionIndex + 1;
+  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerButton.appendChild(button);
+  });
 }
+
+function resetState(){
+    nextButton.style.display = "none";
+    while(answerButtons.firstchild){
+        andswerButtons.removeChild(answerButtons.firstchild);
+
+    }
+
+}
+startQuiz();
