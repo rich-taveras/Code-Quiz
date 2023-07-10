@@ -1,3 +1,5 @@
+@import "../js/timer.js";
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@ body {
   background: #001e4d;
 }
 .app {
-  background: #ffff;
+  background: #fff;
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
@@ -43,20 +45,34 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.btn:hover{
-    background: #222;
-    color: #fff;
+.btn:hover:not([disabled]) {
+  background: #222;
+  color: #fff;
 }
-#next-btn{
-    background: #001e4d;
-    color: #fff;
-    font-weight: 500;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px auto 0;
-    border-radius: 6px;
-    cursor: pointer;
-   display: block;
-   display: none;
+.btn:disabled{
+  cursor: no-drop;
+}
+.correct {
+  background: #9aeadc;
+}
+
+.incorrect {
+  background: #ff9393;
+}
+#next-btn {
+  background: #001e4d;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  display: none;
+}
+#timer {
+  color: black;
+  text-align: end;
 }
