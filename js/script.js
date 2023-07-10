@@ -1,24 +1,6 @@
-// function setTime() {
-//   // Sets interval in variable
-//   var timerInterval = setInterval(function() {
-//     secondsLeft--;
-//     timeEl.textContent = secondsLeft + " seconds left ";
-
-//     if(secondsLeft === 0) {
-//       // Stops execution of action at set interval
-//       clearInterval(timerInterval);
-//       // Calls function to create and append image
-//       sendMessage();
-//     }
-
-//   }, 1000);
-// }
-
-// setTime();
-
 const questions = [
   {
-    question: "Question 1?",
+    question: "Question 1 Finally?",
     answers: [
       { text: "answer here", correct: false },
       { text: "answer here", correct: true },
@@ -27,7 +9,7 @@ const questions = [
     ],
   },
   {
-    question: "Question 2",
+    question: "Question 2 Finally",
     answers: [
       { text: "answer 1", correct: false },
       { text: "answer 2", correct: true },
@@ -36,7 +18,7 @@ const questions = [
     ],
   },
   {
-    question: "Question 3",
+    question: "Question 3 Finally",
     answers: [
       { text: "answer 1", correct: false },
       { text: "answer 2", correct: true },
@@ -45,7 +27,7 @@ const questions = [
     ],
   },
   {
-    question: "Question 4",
+    question: "Question 4 Finally",
     answers: [
       { text: "answer 1", correct: false },
       { text: "answer 2", correct: true },
@@ -55,7 +37,7 @@ const questions = [
   },
 ];
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-buttons");
+const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
@@ -69,23 +51,26 @@ function startQuiz() {
 }
 
 function showQuestion() {
-  resetState();
-  let currentQuestion = questions[currentQuestionIndex];
-  let questionNo = currentQuestionIndex + 1;
-  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-  currentQuestion.answers.forEach(answer => {
-    const button = document.createElement("button");
-    button.innerHTML = answer.text;
-    button.classList.add("btn");
-    answerButton.appendChild(button);
-  });
+resetState();
+ 
+let currentQuestion = questions[currentQuestionIndex];
+let questionNo = currentQuestionIndex + 1;
+questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+currentQuestion.answers.forEach(answer => {
+const button = document.createElement("button");
+button.innerHTML = answer.text;
+button.classList.add("btn");
+answerButtons.appendChild(button);
+   });
 }
+
 function resetState() {
-  nextButton.style.display = "none";
-  while (answerButton.firstchild) {
-    answerButton.removeChild(answerButton.firstchild);
-  }
-}
+nextButton.style.display = "none";
+while (answerButtons.firstchild) {
+answerButtons.removeChild(answerButtons.firstchild);
+   }
+ }
 
 startQuiz();
