@@ -17,14 +17,14 @@ body {
   border-radius: 10px;
   padding: 30px;
 }
-.app h1 {
+ .app h1 {
   font-size: 25px;
   color: #001e4d;
   font-weight: 600;
   border-bottom: 1px solid #333;
   padding-bottom: 30px;
 }
-.quiz {
+ .quiz {
   padding: 20px 0;
 }
 .quiz h2 {
@@ -45,11 +45,12 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
+
 .btn:hover:not([disabled]) {
   background: #222;
   color: #fff;
 }
-.btn:disabled{
+/*.btn:disabled{
   cursor: no-drop;
 }
 .correct {
@@ -58,7 +59,7 @@ body {
 
 .incorrect {
   background: #ff9393;
-}
+}*/
 #next-btn {
   background: #001e4d;
   color: #fff;
@@ -72,7 +73,7 @@ body {
   display: block;
   display: none;
 }
-#timer {
+/*#timer {
   color: black;
   text-align: end;
-}
+} */
