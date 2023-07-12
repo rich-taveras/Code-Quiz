@@ -19,10 +19,11 @@ header p {
 
 #intro-section,
 #question-section,
-#initial-section {
+#initial-section,
+#highscore-section {
   text-align: center;
 }
 
-#question-section ul {
+#question-section ul, #initial-section ul, #highscore-section ol {
   list-style: none;
 }

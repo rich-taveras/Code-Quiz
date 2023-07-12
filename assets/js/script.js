@@ -5,11 +5,12 @@ var questions = [
     answers: ["Paris", "London", "Berlin", "Rome"],
     correctAnswer: "Paris"
   },
+
   // Add more questions as needed
 ];
 
 var timerEl = document.getElementById("timer");
-
+var introSecEl = document.getElementById("intro-section");
 var scoreEl = document.getElementById("score");
 var startBtn = document.getElementById("start-btn");
 var questionSection = document.getElementById("question-section");
@@ -22,7 +23,7 @@ var timeLeft = 75;
 var timerInterval;
 
 function startQuiz() {
-  startBtn.style.display = "none";
+  introSecEl.style.display = "none";
   questionSection.style.display = "block";
   startTimer();
 
