@@ -1,26 +1,31 @@
+var startBtn = document.getElementById("start-btn");
+var introSecEl = document.getElementById("intro-section");
+var timerEl = document.getElementById("timer");
+var questionSection = document.getElementById("question-section");
+var titleEl = document.getElementById("title")
+
 // Questions and answers data
 var questions = [
   {
     question: "What is the capital of France?",
-    answers: ["Paris", "London", "Berlin", "Rome"],
-    correctAnswer: "Paris"
+    choices: ["Paris", "London", "Berlin", "Rome"],
+    answer: "Paris"
+  },
+  {
+    question: "What is the capital of Puerto Rico?",
+    choices: ["Ponce", "Caguas", "San Juan", "Arecibo"],
+    answer: "San Juan"
   },
 
+  
   // Add more questions as needed
 ];
 
-var timerEl = document.getElementById("timer");
-var introSecEl = document.getElementById("intro-section");
-var scoreEl = document.getElementById("score");
-var startBtn = document.getElementById("start-btn");
-var questionSection = document.getElementById("question-section");
-var questionElement = document.createElement("h2");
-var answerElement = document.createElement("ul");
-
-var currentQuestionIndex = 0;
-var score = 0;
-var timeLeft = 75;
-var timerInterval;
+/*
+1. hide intro section
+2. start timer
+3. show question
+4.  data structure to store questions and choices*/
 
 function startQuiz() {
   introSecEl.style.display = "none";
@@ -29,6 +34,34 @@ function startQuiz() {
 
   displayQuestion();
 }
+
+
+
+startBtn.addEventListener("click", startQuiz);
+
+
+
+
+
+
+
+// (STARTER CODE)
+
+
+
+
+var scoreEl = document.getElementById("score");
+// var startBtn = document.getElementById("start-btn");
+
+var questionElement = document.createElement("h2");
+var answerElement = document.createElement("ul");
+
+var currentQuestionIndex = 0;
+var score = 0;
+var timeLeft = 75;
+var timerInterval;
+
+
 
 function displayQuestion() {
   if (currentQuestionIndex >= questions.length) {
@@ -86,4 +119,4 @@ function endQuiz() {
   // Add code to handle high scores and further actions
 }
 
-startBtn.addEventListener("click", startQuiz);
+
