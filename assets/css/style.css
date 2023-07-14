@@ -17,6 +17,15 @@ header p {
   display: none;
 }
 
+.choices {
+  background-color: purple;
+  color: white;
+}
+#start-btn {
+  background-color: green;
+  color: white;
+}
+
 #intro-section,
 #question-section,
 #initial-section,
@@ -24,6 +33,8 @@ header p {
   text-align: center;
 }
 
-#question-section ul, #initial-section ul, #highscore-section ol {
+#question-section ul,
+#initial-section ul,
+#highscore-section ol {
   list-style: none;
 }
